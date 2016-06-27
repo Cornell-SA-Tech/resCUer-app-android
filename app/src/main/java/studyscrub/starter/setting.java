@@ -37,10 +37,10 @@ public class setting extends AppCompatActivity {
                 getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
 
         EditText ph = (EditText)findViewById(R.id.edit_phone);
-        ph.setHint("Current friend's number is:\n" + getPhone());
+        ph.setHint(getPhone());
 
         EditText ha = (EditText)findViewById(R.id.edit_home);
-        ha.setHint("Current address is:\n" + getHome());
+        ha.setHint(getHome());
 
         ph.setOnKeyListener(new View.OnKeyListener(){
             public boolean onKey(View v, int keycode, KeyEvent event){
