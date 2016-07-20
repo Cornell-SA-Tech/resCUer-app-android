@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.wearable.view.BoxInsetLayout
+<android.support.wearable.view.GridViewPager
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" android:id="@+id/container"
     android:layout_width="match_parent" android:layout_height="match_parent"
     tools:context="com.example.cornellrescuer.MainActivity" tools:deviceIds="wear">
 
-    <android.support.wearable.view.CircledImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@mipmap/ic_settings_white_48dp"
-        android:onClick="callFriend"/>
 
-</android.support.wearable.view.BoxInsetLayout>
+</android.support.wearable.view.GridViewPager>
