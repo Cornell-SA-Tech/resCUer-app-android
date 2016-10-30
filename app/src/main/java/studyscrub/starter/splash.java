@@ -9,7 +9,6 @@ public class splash extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         Intent next = new Intent(this, MyActivity.class);
         startActivity(next);
         finish();

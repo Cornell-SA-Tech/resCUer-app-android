@@ -18,9 +18,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiActivity;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.wearable.Wearable;
+
 import java.util.List;
 
 public class MyActivity extends AppCompatActivity {
+    private GoogleApiClient mGAC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +36,27 @@ public class MyActivity extends AppCompatActivity {
             this.findViewById(R.id.back).setBackgroundColor(0xFF323D4D);
             this.findViewById(R.id.back).invalidate();
         }
+        mGAC = new GoogleApiClient.Builder(this)
+                .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
+                    @Override
+                    public void onConnected(Bundle connectionHint){
+                        // Now you can use the Data Layer API
+                        Log.d("googleApi", "onConnected: " + connectionHint);
+                    }
+                    @Override
+                    public void onConnectionSuspended(int cause) {
+                        Log.d("googleApi", "onConnectionSuspended: " + cause);
+                    }
+                })
+                .addOnConnectionFailedListener(new GoogleApiClient.OnConnectionFailedListener() {
+                    @Override
+                    public void onConnectionFailed(ConnectionResult result) {
+                        Log.d("googleApi", "onConnectionFailed: " + result);
+                    }
+                })
+                // Request access only to the Wearable API
+                .addApi(Wearable.API)
+                .build();
     }
 
     @Override
@@ -59,7 +86,13 @@ public class MyActivity extends AppCompatActivity {
     public void call(View view){
         SharedPreferences sharedPref = this.getSharedPreferences("SAVED_FILE", Context.MODE_PRIVATE);
         String num = "tel:";
-        num = num.concat(sharedPref.getString("FRIEND", "5073124601"));
+        String retrieve = sharedPref.getString("FRIEND", "NON");
+        num = num.concat(retrieve);
+        if (retrieve == "NON"){
+            Toast t = Toast.makeText(this, "Please setup the phone number first", Toast.LENGTH_LONG);
+            t.show();
+            return;
+        }
         Intent intent = new Intent(Intent.ACTION_CALL);
         intent.setData(Uri.parse(num));
         PackageManager pm = this.getPackageManager();
@@ -95,7 +128,7 @@ public class MyActivity extends AppCompatActivity {
     }
 
     public void callPolice(View view){
-        String num = "tel:911";
+        String num = "tel:2551111";
         Intent intent = new Intent(Intent.ACTION_CALL);
         intent.setData(Uri.parse(num));
         PackageManager pm = this.getPackageManager();
@@ -115,7 +148,12 @@ public class MyActivity extends AppCompatActivity {
     public void takeDirection(View view){
         String dir = "http://maps.google.com/maps?&daddr=";
         SharedPreferences sharedPref = this.getSharedPreferences("SAVED_FILE", Context.MODE_PRIVATE);
-        String home = sharedPref.getString("HOME", "315 Eddy Street, Ithaca");
+        String home = sharedPref.getString("HOME", "NON");
+        if (home == "NON"){
+            Toast t = Toast.makeText(this, "Please setup your home address first", Toast.LENGTH_LONG);
+            t.show();
+            return;
+        }
         dir = dir.concat(home);
         Intent map = new Intent(Intent.ACTION_VIEW, Uri.parse(dir));
         startActivity(map);

@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.wearable.view.CircularButton layout_height=""
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/call_police"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-</android.support.wearable.view.CircularButton>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="24dp"
+                android:paddingBottom="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <android.support.wearable.view.CircularButton
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/call_police"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </android.support.wearable.view.CircularButton>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        tools:text="Cancel"
+        android:id="@+id/label"
+        android:fontFamily="sans-serif-condensed-light"
+        android:textSize="20sp"
+        android:textColor="@color/white">
+    </TextView>
+    
+</LinearLayout>

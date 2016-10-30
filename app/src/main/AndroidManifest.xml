@@ -11,13 +11,19 @@
         android:label="Cornell Rescuer"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <service android:name=".StartFromWear">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.MESSAGE_RECEIVED" />
+                <data android:scheme="wear" android:host="*"
+                    android:path="/callBlue" />
+            </intent-filter>
+        </service>
         <activity
             android:name=".splash"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
