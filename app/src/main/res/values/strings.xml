@@ -1,11 +1,13 @@
 <resources>
-    <string name="app_name">starter</string>
-    <string name="edit_phone">Set your friend\'s phone number</string>
-    <string name="edit_home">Set you home address</string>
+    <string name="app_name">ResCUer</string>
+    <string name="edit_phone">Quick contact number</string>
+    <string name="edit_home">Your home address</string>
     <string name="taxi">Call Taxi</string>
     <string name="button_send">set</string>
     <string name="action_settings">Settings</string>
     <string name="call">Call Friend</string>
     <string name="home">Take Me Home</string>
     <string name="police">Call Police</string>
+    <string name="tab_actions">Actions</string>
+    <string name="tab_guide">Emergency Guide</string>
 </resources>

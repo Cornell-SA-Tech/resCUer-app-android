@@ -1,0 +1,24 @@
+{
+  "instruction":[
+    {
+      "title":"Hazardous Events",
+      "text":"For spills or incidents requiring training, procedures, or personal protective equipment beyond the abilities of the personnel present, take the following actions:"
+    },
+    {
+      "title":"Alert",
+      "text":"• Alert others in the immediate area and evacuate the room.", details: "\n • If building evacuation is needed then manually activate the building fire alarm."
+    },
+    {
+      "title":"Leave",
+      "text":"• Close doors as you leave the room."
+    },
+    {
+      "title":"Ask for Help",
+      "text":"• Call 911 (607-255‐1111 from cell phones) from a safe location and provide the following information \n • Your name, telephone number, and location\n • Location of the spill\n • Name and quantity of material spilled (if known)\n • Any injuries or personal contamination"
+    },
+    {
+      "title":"Wash",
+      "text":"• Use eyewash or safety showers as needed to wash spilled chemicals off your body.\n • Flush the affected areas with copious amounts of water for at least 15 minutes."
+    }
+  ]
+}

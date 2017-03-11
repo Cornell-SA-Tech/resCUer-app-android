@@ -1,1 +1,1 @@
-include ':app', ':cornellrescuer'
+include ':app'

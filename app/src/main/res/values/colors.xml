@@ -4,5 +4,7 @@
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#FFFFFF</color>
     <color name="splashback">#FF323D4D</color>
-    <color name="white">#FFFFFF</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray">#FFA0A0A0</color>
+    <color name="divider">#FF989ea6</color>
 </resources>

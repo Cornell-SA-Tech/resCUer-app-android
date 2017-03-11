@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="studyscrub.starter">
-
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    package="cornell.sa.rescuer">
 
     <application
         android:allowBackup="true"
@@ -11,13 +8,6 @@
         android:label="Cornell Rescuer"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <service android:name=".StartFromWear">
-            <intent-filter>
-                <action android:name="com.google.android.gms.wearable.MESSAGE_RECEIVED" />
-                <data android:scheme="wear" android:host="*"
-                    android:path="/callBlue" />
-            </intent-filter>
-        </service>
         <activity
             android:name=".splash"
             android:screenOrientation="portrait"
@@ -28,15 +18,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MyActivity"
+            android:name=".MainActivity"
             android:screenOrientation="portrait"></activity>
         <activity android:name=".setting">
-            android:parentActivityName=".MyActivity" >
+            android:parentActivityName=".MyActivity"
             android:windowSoftInputMode="adjustResize"
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MyActivity" />
+                android:value=".MainActivity" />
         </activity>
+        <activity android:name=".guideContent">
+            android:parentActivityName=".MyActivity
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

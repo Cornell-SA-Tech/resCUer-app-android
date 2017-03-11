@@ -1,0 +1,20 @@
+{
+  "instruction":[
+    {
+      "title":"Run",
+      "text":"• If there is an escape path, attempt to evacuate \n • Evacuate whether others agree or not \n • Leave your belongings behind \n • Help others escape if possible \n • Prevent others from entering the area \n • Meet at a predetermined area \n • Do not leave campus \n • Call 911 when  you are safe"
+    },
+    {
+      "title":"Hide",
+      "text":"• Lock and/or blockade the door \n • Hide behind large objects \n • Silence your cell phone \n • Remain very quiet"
+    },
+    {
+      "title":"Fight",
+      "text":"• Attempt to incapacitate the shooter \n • Act with physical aggression \n • Improvise weapons \n • Commit to your actions"
+    },
+    {
+      "title":"When Law Enforcement arrives on the Scene",
+      "text":"• Do exactly as the team of officers instructs \n • Do not approach the officers \n • Keep your hands visible, fingers spread, and empty."
+    }
+  ]
+}
