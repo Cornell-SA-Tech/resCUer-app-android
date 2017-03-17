@@ -51,16 +51,9 @@ public class guide extends ListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        switch (position){
-            case 0:
-                Intent intent = new Intent(getActivity(), guideContent.class);
-                startActivity(intent);
-                break;
-            default:
-                Intent intentd = new Intent(getActivity(), guideContent.class);
-                startActivity(intentd);
-                return;
-        }
+        Intent intent = new Intent(getActivity(), guideContent.class);
+        intent.putExtra("id", position);
+        startActivity(intent);
     }
 
 
