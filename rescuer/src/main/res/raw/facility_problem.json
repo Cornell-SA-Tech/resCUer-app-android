@@ -1,0 +1,24 @@
+{
+  "instruction":[
+    {
+      "title":"Call 911 (607-255‐1111 for cell phones) and evacuate the building in cases of:",
+      "text":" • Fire\n\n • Smoke\n\n • Explosion\n\n • Structural damage or collapse\n\n • Uncontrolled gas leak\n\n • Uncontrolled chemical or hazardous material spills"
+    },
+    {
+      "title":"Call 911 (607-255‐1111 for cell phones) and follow dispatcher instructions in cases of:",
+      "text":" • Unknown odors\n\n • Activated residence hall room smoke detectors\n\n • Hazardous conditions\n\n • Persons trapped in elevators"
+    },
+    {
+      "title":"Call the Campus Life Facilities Office at (607) 255‐0423",
+      "text":" • Electrical outage\n\n • Flooding\n\n • Heating or air-conditioning failure\n\n • Building or room security issues\n\nIf the problem occurs between 5 p.m. and 8 a.m., or on weekends, call the Residential Program staff on call."
+    },
+    {
+      "title":"Call Facilities Customer Service at (607) 255‐5322",
+      "text":" • Electrical outage\n\n • Building flooding\n\n • Heating or air-conditioning failure\n\n • Water Leaks\n\nIn case of electrical emergencies, do not touch equipment that is smoking, sparking, tripping circuit breakers or giving electrical shocks."
+    },
+    {
+      "title":"Telephone or computer network failure",
+      "text":"Call your unit’s network administrator or Cornell Information Technologies at (607) 255‐8990."
+    }
+  ]
+}

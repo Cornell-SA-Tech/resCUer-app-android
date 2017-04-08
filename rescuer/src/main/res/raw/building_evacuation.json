@@ -1,0 +1,20 @@
+{
+  "instruction":[
+    {
+      "title":"Evacuation is required:",
+      "text":"• any time the fire alarm sounds, or \n\n• an evacuation announcement is made, or \n\n• a university official orders you to evacuate"
+    },
+    {
+      "title":"In the event of an evacuation:",
+      "text":"• Alert those around you who might not have heard. Turn off equipment and secure hazardous operations if possible. \n\n• Take your keys, jackets, and any personal items with you, you may not have access to them for hours or longer. \n\n• Close doors and windows. Leave room lights on. \n\n• Remain calm and walk to nearest exit. Do NOT use elevators."
+    },
+    {
+      "title":"If you are unable to leave the building due to a physical disability:",
+      "text":"• Go to the nearest area where there are no hazards. \n\n• Use a telephone to call 911 or Cornell Police at (607) 255‐1111. \n\n• Be sure to give them the room number so they can send help to you. \n\n• If possible, signal out the window to on‐site emergency responders. \n\n• One person may remain with you if they wish to assist you."
+    },
+    {
+      "title":"Do not re‐enter",
+      "text":"Do not re‐enter until given an “all clear” signal by emergency personnel."
+    }
+  ]
+}
