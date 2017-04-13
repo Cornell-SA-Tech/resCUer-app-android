@@ -1,75 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:android.support.design="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight=".5"
-        android:visibility="invisible"/>
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:id="@+id/home"
-        android:onClick="takeDirection"
-        android:background="#00000000"
-        android:scaleType="fitCenter"
-        android:src="@drawable/home"/>
-
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight=".1"
-        android:visibility="invisible"/>
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:id="@+id/call"
-        android:onClick="call"
-        android:background="#00000000"
-        android:scaleType="fitCenter"
-        android:src="@drawable/friend"/>
-
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight=".1"
-        android:visibility="invisible"/>
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:onClick="callTaxi"
-        android:background="#00000000"
-        android:scaleType="fitCenter"
-        android:src="@drawable/taxi"/>
-
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight=".1"
-        android:visibility="invisible"/>
-
-    <ImageButton
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:id="@+id/police"
-        android:onClick="policeClick"
-        android:background="#00000000"
-        android:scaleType="fitCenter"
-        android:src="@drawable/police"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight=".5"
-        android:visibility="invisible"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <android.support.design.widget.FloatingActionButton
+                android:layout_weight="0.9"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/home"
+                app:backgroundTint="@color/blue"
+                app:borderWidth="0dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/home"/>
+            <TextView
+                android:layout_weight="0.1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="Home direction"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <android.support.design.widget.FloatingActionButton
+                android:layout_weight="0.9"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/contact"
+                app:backgroundTint="@color/green"
+                app:borderWidth="0dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/contact"/>
+            <TextView
+                android:layout_weight="0.1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="Quick Contact"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <android.support.design.widget.FloatingActionButton
+                android:layout_weight="0.9"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/taxi"
+                app:backgroundTint="@color/yellow"
+                app:borderWidth="0dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/taxi"/>
+            <TextView
+                android:layout_weight="0.1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="Call taxi"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <android.support.design.widget.FloatingActionButton
+                android:layout_weight="0.9"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/police"
+                app:backgroundTint="@color/red"
+                app:borderWidth="0dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/police"/>
+            <TextView
+                android:layout_weight="0.1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="Call police"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </LinearLayout>

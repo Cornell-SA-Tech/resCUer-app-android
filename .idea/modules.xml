@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Resuer-Android.iml" filepath="$PROJECT_DIR$/Resuer-Android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cornellrescuer/cornellrescuer.iml" filepath="$PROJECT_DIR$/cornellrescuer/cornellrescuer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/resCUer-app-android.iml" filepath="$PROJECT_DIR$/resCUer-app-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rescuer/rescuer.iml" filepath="$PROJECT_DIR$/rescuer/rescuer.iml" />
     </modules>
   </component>
 </project>

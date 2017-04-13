@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if (this.findViewById(R.id.main_layout) != null) {
-            this.findViewById(R.id.main_layout).setBackgroundColor(0xFF323D4D);
+            this.findViewById(R.id.main_layout).setBackgroundColor(0xFF5a6370);
             this.findViewById(R.id.main_layout).invalidate();
         }
 
@@ -79,10 +79,15 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    public void callClicked(View view){
+        ContactDiag cd = new ContactDiag();
+        cd.show(getFragmentManager(), "CD");
+    }
+
     public void call(int which){
         SharedPreferences sharedPref = getSharedPreferences("SAVED_FILE", Context.MODE_PRIVATE);
         String num = "tel:";
-        String retrieve = sharedPref.getString("FRIEND", "NON");
+        String retrieve = sharedPref.getString("PNUM"+Integer.toString(which+1), "NON");
         num = num.concat(retrieve);
         if (retrieve == "NON"){
             Toast t = Toast.makeText(this, "Please setup the phone number first", Toast.LENGTH_LONG);
@@ -150,7 +155,8 @@ public class MainActivity extends AppCompatActivity {
     public void takeDirection(View view){
         String dir = "http://maps.google.com/maps?&daddr=";
         SharedPreferences sharedPref = getSharedPreferences("SAVED_FILE", Context.MODE_PRIVATE);
-        String home = sharedPref.getString("HOME", "NON");
+        String home = sharedPref.getString("STREET", "NON")+",";
+        home += sharedPref.getString("CITY","");
         if (home == "NON"){
             Toast t = Toast.makeText(this, "Please setup your home address first", Toast.LENGTH_LONG);
             t.show();

@@ -1,5 +1,6 @@
 package cornell.sa.rescuer;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
@@ -25,88 +26,44 @@ public class actions extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate((savedInstanceState));
+        View myView = this.getView();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_action, container, false);
+        View myView = inflater.inflate(R.layout.activity_action, container, false);
+        //POLICE CALL FUNCTION
+        FloatingActionButton police = (FloatingActionButton)myView.findViewById(R.id.police);
+        police.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                ((MainActivity)getActivity()).policeClick(v);
+            }
+        });
+        //TAXICALL
+        FloatingActionButton taxi = (FloatingActionButton)myView.findViewById(R.id.taxi);
+        taxi.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                ((MainActivity)getActivity()).callTaxi(v);
+            }
+        });
+        //DIRECTION
+        FloatingActionButton home = (FloatingActionButton)myView.findViewById(R.id.home);
+        home.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                ((MainActivity)getActivity()).takeDirection(v);
+            }
+        });
+        //CALL
+        FloatingActionButton call = (FloatingActionButton)myView.findViewById(R.id.contact);
+        call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity)getActivity()).callClicked(view);
+            }
+        });
+        return myView;
     }
 
-    public void call(View view){
-        SharedPreferences sharedPref = getActivity().getSharedPreferences("SAVED_FILE", Context.MODE_PRIVATE);
-        String num = "tel:";
-        String retrieve = sharedPref.getString("FRIEND", "NON");
-        num = num.concat(retrieve);
-        if (retrieve == "NON"){
-            Toast t = Toast.makeText(getActivity(), "Please setup the phone number first", Toast.LENGTH_LONG);
-            t.show();
-            return;
-        }
-        Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse(num));
-        PackageManager pm = getActivity().getPackageManager();
-        int hasPerm = pm.checkPermission(
-                android.Manifest.permission.CALL_PHONE,
-                getActivity().getPackageName());
-        if (hasPerm == PackageManager.PERMISSION_GRANTED) {
-            startActivity(intent);
-        }
-        else{
-            intent = new Intent(Intent.ACTION_DIAL);
-            intent.setData(Uri.parse(num));
-            startActivity(intent);
-        }
-    }
-
-    public void callTaxi(View view){
-        String num = "tel:6072777777";
-        Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse(num));
-        PackageManager pm = getActivity().getPackageManager();
-        int hasPerm = pm.checkPermission(
-                android.Manifest.permission.CALL_PHONE,
-                getActivity().getPackageName());
-        if (hasPerm == PackageManager.PERMISSION_GRANTED) {
-            startActivity(intent);
-        }
-        else{
-            intent = new Intent(Intent.ACTION_DIAL);
-            intent.setData(Uri.parse(num));
-            startActivity(intent);
-        }
-    }
-
-    public void callPolice(View view){
-        String num = "tel:2551111";
-        Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse(num));
-        PackageManager pm = getActivity().getPackageManager();
-        int hasPerm = pm.checkPermission(
-                android.Manifest.permission.CALL_PHONE,
-                getActivity().getPackageName());
-        if (hasPerm == PackageManager.PERMISSION_GRANTED) {
-            startActivity(intent);
-        }
-        else{
-            intent = new Intent(Intent.ACTION_DIAL);
-            intent.setData(Uri.parse(num));
-            startActivity(intent);
-        }
-    }
-
-    public void takeDirection(View view){
-        String dir = "http://maps.google.com/maps?&daddr=";
-        SharedPreferences sharedPref = getActivity().getSharedPreferences("SAVED_FILE", Context.MODE_PRIVATE);
-        String home = sharedPref.getString("HOME", "NON");
-        if (home == "NON"){
-            Toast t = Toast.makeText(getActivity(), "Please setup your home address first", Toast.LENGTH_LONG);
-            t.show();
-            return;
-        }
-        dir = dir.concat(home);
-        Intent map = new Intent(Intent.ACTION_VIEW, Uri.parse(dir));
-        startActivity(map);
-    }
 }

@@ -7,4 +7,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#FFA0A0A0</color>
     <color name="divider">#FF989ea6</color>
+    <color name="red">#FFe53935</color>
+    <color name="blue">#FF3949ab</color>
+    <color name="green">#FF43a047</color>
+    <color name="yellow">#FFfdd835</color>
+    <color name="card">#FF90A4AE</color>
+    <color name="cyan">#FF00B0FF</color>
+    <color name="delete">#FFef5350</color>
 </resources>

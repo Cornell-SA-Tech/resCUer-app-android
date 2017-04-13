@@ -2,4 +2,24 @@
 <resources>
     <item name="phone_num" type="id"/>
     <item name="home_addr" type="id"/>
+    <item name="card_1" type="id"/>
+    <item name="card_2" type="id"/>
+    <item name="card_3" type="id"/>
+    <item name="card_4" type="id"/>
+    <item name="card_5" type="id"/>
+    <item name="card_6" type="id"/>
+    <item name="card_7" type="id"/>
+    <item name="card_8" type="id"/>
+    <item name="card_9" type="id"/>
+    <item name="card_10" type="id"/>
+    <item name="Card_1" type="id"/>
+    <item name="Card_2" type="id"/>
+    <item name="Card_3" type="id"/>
+    <item name="Card_4" type="id"/>
+    <item name="Card_5" type="id"/>
+    <item name="Card_6" type="id"/>
+    <item name="Card_7" type="id"/>
+    <item name="Card_8" type="id"/>
+    <item name="Card_9" type="id"/>
+    <item name="Card_10" type="id"/>
 </resources>
