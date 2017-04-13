@@ -7,26 +7,28 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 /**
  * Created by yiweini on 3/24/17.
  */
-public class contactDiag extends DialogFragment {
-    final MainActivity paren = (MainActivity)getActivity();
-    private CharSequence[] phones;
+public class ContactDiag extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+        final MainActivity paren = (MainActivity)getActivity();
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         SharedPreferences sharedPref = paren.getSharedPreferences("SAVED_FILE", Context.MODE_PRIVATE);
         builder.setTitle(R.string.pickcontact);
-        int numContact = sharedPref.getInt("NUM", -1);
-        for (int i = 0; i < numContact; i++){
-            phones[i] = sharedPref.getString("NUM"+i, "NON");
+        int total = sharedPref.getInt("NUM", 0);
+        String nick = "";
+        for (int i = 1; i <= total; i++){
+            nick += sharedPref.getString("NICK"+Integer.toString(i),"")+"`";
         }
+        String[] nicks = nick.split("`");
 
-        builder.setItems(phones, new DialogInterface.OnClickListener() {
+        builder.setItems(nicks, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 paren.call(which);
                 return;
