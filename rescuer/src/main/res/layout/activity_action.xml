@@ -27,6 +27,7 @@
                 android:id="@+id/home"
                 app:backgroundTint="@color/blue"
                 app:borderWidth="0dp"
+                android:translationZ="8dp"
                 android:scaleType="fitCenter"
                 android:src="@mipmap/home"/>
             <TextView
@@ -34,8 +35,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:text="Home direction"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/white"/>
+                android:layout_marginTop="10dp"/>
+                <!--android:textColor="@color/white"/>-->
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -53,6 +55,7 @@
                 android:id="@+id/contact"
                 app:backgroundTint="@color/green"
                 app:borderWidth="0dp"
+                android:translationZ="8dp"
                 android:scaleType="fitCenter"
                 android:src="@mipmap/contact"/>
             <TextView
@@ -60,8 +63,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:text="Quick Contact"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/white"/>
+                android:layout_marginTop="10dp"/>
+                <!--android:textColor="@color/white"/>-->
         </LinearLayout>
     </LinearLayout>
 
@@ -87,6 +90,7 @@
                 android:id="@+id/taxi"
                 app:backgroundTint="@color/yellow"
                 app:borderWidth="0dp"
+                android:translationZ="8dp"
                 android:scaleType="fitCenter"
                 android:src="@mipmap/taxi"/>
             <TextView
@@ -94,8 +98,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:text="Call taxi"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/white"/>
+                android:layout_marginTop="10dp"/>
+                <!--android:textColor="@color/white"/>-->
         </LinearLayout>
 
         <LinearLayout
@@ -113,6 +117,7 @@
                 android:id="@+id/police"
                 app:backgroundTint="@color/red"
                 app:borderWidth="0dp"
+                android:translationZ="8dp"
                 android:scaleType="fitCenter"
                 android:src="@mipmap/police"/>
             <TextView
@@ -120,8 +125,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:text="Call police"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/white"/>
+                android:layout_marginTop="10dp"/>
+                <!--android:textColor="@color/white"/>-->
         </LinearLayout>
 
     </LinearLayout>

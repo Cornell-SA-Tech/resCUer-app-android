@@ -4,6 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.SupportMapFragment;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +15,7 @@ import java.util.List;
  */
 public class pageAdapter extends FragmentPagerAdapter{
     private List<Fragment> frags = new ArrayList<>();
+    private SupportMapFragment mf;
 
     int numTab;
 
@@ -20,6 +24,7 @@ public class pageAdapter extends FragmentPagerAdapter{
         this.numTab = NumOfTabs;
         frags.add(new actions());
         frags.add(new guide());
+        frags.add(new BlueLight());
     }
 
     @Override
@@ -29,6 +34,8 @@ public class pageAdapter extends FragmentPagerAdapter{
                 return frags.get(0);
             case 1:
                 return frags.get(1);
+            case 2:
+                return frags.get(2);
             default:
                 return frags.get(0);
         }
@@ -42,6 +49,8 @@ public class pageAdapter extends FragmentPagerAdapter{
     @Override
     public CharSequence getPageTitle(int position) {
         switch (position) {
+            case 2:
+                return "BlueLight";
             case 1:
                 return "Emergency guide";
             case 0:

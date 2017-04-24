@@ -33,15 +33,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if (this.findViewById(R.id.main_layout) != null) {
-            this.findViewById(R.id.main_layout).setBackgroundColor(0xFF5a6370);
-            this.findViewById(R.id.main_layout).invalidate();
-        }
+//        if (this.findViewById(R.id.main_layout) != null) {
+//            this.findViewById(R.id.main_layout).setBackgroundColor(0xFF5a6370);
+//            this.findViewById(R.id.main_layout).invalidate();
+//        }
 
         final TabLayout tabLayout = (TabLayout) findViewById(R.id.tab);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-        tabLayout.setBackgroundColor(0xFF46505e);
-        tabLayout.setTabTextColors(0xFFd6d8db, 0xFFd6d8db);
+//        tabLayout.setBackgroundColor(0xFF46505e);
+        tabLayout.setBackgroundColor(0xFFE57373);
+        tabLayout.setTabTextColors(0xFFFFFFFF, 0xFFFFFFFF);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         adapter = new pageAdapter

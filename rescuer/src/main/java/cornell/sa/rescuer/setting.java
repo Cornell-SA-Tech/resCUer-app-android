@@ -43,10 +43,10 @@ public class setting extends AppCompatActivity {
         setContentView(R.layout.activity_setting);
 
         //change colors
-        if (this.findViewById(R.id.setting) != null) {
-            this.findViewById(R.id.setting).setBackgroundColor(0xFF323D4D);
-            this.findViewById(R.id.setting).invalidate();
-        }
+//        if (this.findViewById(R.id.setting) != null) {
+//            this.findViewById(R.id.setting).setBackgroundColor(0xFF323D4D);
+//            this.findViewById(R.id.setting).invalidate();
+//        }
 
         //initiate hashmap
         for (int j = 1; j <= 10; j++){

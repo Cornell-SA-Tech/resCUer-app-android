@@ -8,8 +8,8 @@ android {
         applicationId "cornell.sa.rescuer"
         minSdkVersion 21
         targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
     }
     buildTypes {
         release {
@@ -26,5 +26,6 @@ dependencies {
     compile 'com.android.support:design:24.2.0'
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
     compile 'com.android.support:cardview-v7:21.0.+'
-
+    compile 'com.google.gms:google-services:3.0.0'
+    compile 'com.google.android.gms:play-services:10.2.1'
 }

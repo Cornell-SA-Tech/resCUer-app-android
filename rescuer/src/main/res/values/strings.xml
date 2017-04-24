@@ -15,4 +15,5 @@
     <string name="sethome">Set home address</string>
     <string name="save">save</string>
     <string name="del">Delete</string>
+    <string name="google_maps_key">AIzaSyCpyIE8drFnVUXnYgwT_CEKsmB93YOudO4</string>
 </resources>

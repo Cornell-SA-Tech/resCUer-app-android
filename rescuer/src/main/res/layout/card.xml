@@ -4,10 +4,12 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="25dp"
+    android:layout_marginBottom="15dp"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     tools:context=".setting"
-    android:id="@+id/head">
+    android:id="@+id/head"
+    android:padding="5dp"
+    android:clipToPadding="false">
 
     <View
         android:layout_width="0dp"
@@ -20,7 +22,9 @@
         android:layout_weight="0.9"
         card_view:cardBackgroundColor="@color/card"
         card_view:cardCornerRadius="4dp"
-        android:id="@+id/card">
+        card_view:cardUseCompatPadding="true"
+        android:id="@+id/card"
+        android:translationZ="3dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -54,7 +58,7 @@
                     android:layout_height="wrap_content"
                     android:text="Edit"
                     android:textSize="18dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="30dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="10dp"
                     android:onClick="editContact"
@@ -65,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:text="Delete"
                     android:textSize="18dp"
-                    android:layout_marginRight="30dp"
+                    android:layout_marginRight="50dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="10dp"
                     android:onClick="delContact"
