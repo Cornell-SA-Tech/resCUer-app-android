@@ -7,9 +7,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.widget.Toast;
-
-import java.util.ArrayList;
 
 /**
  * Created by yiweini on 3/24/17.

@@ -16,20 +16,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import android.app.AlertDialog;
-import android.app.DialogFragment;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.Toast;
-
-import static android.R.attr.onClick;
-
 /**
  * Created by chenn on 4/11/2017.
  */

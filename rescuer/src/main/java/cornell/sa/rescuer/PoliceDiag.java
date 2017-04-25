@@ -1,15 +1,10 @@
 package cornell.sa.rescuer;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.DialogFragment;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.widget.ListView;
 
 /**
  * Created by yiweini on 3/24/17.

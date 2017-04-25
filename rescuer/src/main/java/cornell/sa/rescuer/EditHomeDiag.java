@@ -12,8 +12,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import static android.R.attr.onClick;
-
 /**
  * Created by chenn on 4/11/2017.
  */

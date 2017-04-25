@@ -1,33 +1,38 @@
 package cornell.sa.rescuer;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.MenuInflater;
-import android.view.View;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.ListView;
+import android.view.View;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationListener;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
 
+public class MainActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
+        GoogleApiClient.OnConnectionFailedListener, LocationListener{
+
+    //Class variables
+    private Location curLocation;
     private pageAdapter adapter;
     public final String[] EMERGENCY = {"911", "607-255-1111", "607-274-4011"};
+    private GoogleApiClient mGoogleApiClient;
+    private LocationRequest mLocationRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +42,22 @@ public class MainActivity extends AppCompatActivity {
 //            this.findViewById(R.id.main_layout).setBackgroundColor(0xFF5a6370);
 //            this.findViewById(R.id.main_layout).invalidate();
 //        }
+        // Create an instance of GoogleAPIClient.
+        // Create the LocationRequest object
+
+        mLocationRequest = LocationRequest.create()
+                .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
+                .setInterval(1 * 500)        // 10 seconds, in milliseconds
+                .setFastestInterval(1 * 500); // 1 second, in milliseconds
+
+        if (mGoogleApiClient == null) {
+            mGoogleApiClient = new GoogleApiClient.Builder(this)
+                    .addConnectionCallbacks(this)
+                    .addOnConnectionFailedListener(this)
+                    .addApi(LocationServices.API)
+                    .build();
+        }
+        mGoogleApiClient.connect();
 
         final TabLayout tabLayout = (TabLayout) findViewById(R.id.tab);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
@@ -44,18 +65,78 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setBackgroundColor(0xFFE57373);
         tabLayout.setTabTextColors(0xFFFFFFFF, 0xFFFFFFFF);
 
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        adapter = new pageAdapter
-                (getSupportFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(adapter);
-        tabLayout.setupWithViewPager(viewPager);
-
         SharedPreferences sharedPref = getSharedPreferences("SAVED_FILE", Context.MODE_PRIVATE);
         String home = sharedPref.getString("HOME", "NON");
         String retrieve = sharedPref.getString("FRIEND", "NON");
         if (home == "NON" || retrieve == "NON"){
             Toast.makeText(this, "Please setup your information in settings", Toast.LENGTH_LONG).show();
         }
+
+        adapter = new pageAdapter
+                (getSupportFragmentManager(), tabLayout.getTabCount());
+        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        mGoogleApiClient.connect();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (mGoogleApiClient.isConnected()) {
+            LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, this);
+            mGoogleApiClient.disconnect();
+        }
+    }
+
+    @Override
+    public void onConnected(Bundle bundle){
+        try{
+            curLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+            if (curLocation == null) {
+                LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
+            }
+        }catch(SecurityException e){
+            Toast.makeText(this, "Unable to access location information", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult) {
+        if (connectionResult.hasResolution()) {
+            try {
+                // Start an Activity that tries to resolve the error
+                connectionResult.startResolutionForResult(this,9000);
+            } catch (IntentSender.SendIntentException e) {
+                e.printStackTrace();
+            }
+        } else {
+            Log.i("failed", "Location services connection failed with code " + connectionResult.getErrorCode());
+        }
+    }
+
+    public Location getCurLocation(){
+        try {
+            LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
+        } catch (SecurityException e) {
+            e.printStackTrace();
+        }
+        return curLocation;
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+        curLocation = location;
     }
 
     @Override

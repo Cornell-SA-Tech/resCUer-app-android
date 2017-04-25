@@ -4,7 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.SupportMapFragment;
 
 import java.util.ArrayList;
@@ -49,14 +48,14 @@ public class pageAdapter extends FragmentPagerAdapter{
     @Override
     public CharSequence getPageTitle(int position) {
         switch (position) {
-            case 2:
-                return "BlueLight";
-            case 1:
-                return "Emergency guide";
             case 0:
                 return "Actions";
+            case 1:
+                return "Guide";
+            case 2:
+                return "BlueLight";
             default:
-                return "Emergency guide";
+                return "Actions";
         }
     }
 }
